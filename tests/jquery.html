@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+    // <![CDATA[
+      
+      var Tests = {
+        make: function(i) {
+          $("<ul id='setid" + i + "' class='fromcode'></ul>")
+    				.append("<li>one</li>")
+    				.append("<li>two</li>")
+    				.append("<li>three</li>")
+    				.appendTo(document.body);
+        },
+        
+        find: function(id) {
+          return $('setid'+id);
+        },
+        
+        bind: function(list) {
+          $(list).bind('click', function() {});
+        },
+        
+        unbind: function(list) {
+          $(list).unbind('click');
+        },
+        
+        attr: function(list) {
+          $(list).map(function() { return this.id });
+        },
+        
+        style: function(list) {
+          $(list).css({ backgroundColor:"#ededed", color:"#fff" });
+        },
+        
+        addClass: function(list) {
+          $(list).addClass('test-class');
+        },
+        
+        removeClass: function(list) {
+          $(list).removeClass('test-class');
+        },
+        
+        update: function(list) {
+          $(list).html('the text');
+        },
+        
+        insertAfter: function(list, elements) {
+          $(list).each(function(i, item) {
+            $(item).after(elements[i]);
+          });
+        },
+        
+        insertBefore: function(list, elements) {
+          $(list).each(function(i, item) {
+            $(item).before(elements[i]);
+          });
+        },
+        
+        remove: function(list) {
+          $(list).remove();
+        }
+      };
+      
+      
+    // ]]>
+    </script>
+  </head>
+  <body></body>
+</html>
