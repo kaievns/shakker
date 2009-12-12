@@ -6,7 +6,7 @@
       html, body {
         font-family: Helvetica;
         background: #EEE;
-        padding: 1em 5em;
+        padding: 1em 4em;
       }
       
       table {
@@ -19,7 +19,7 @@
         padding: .2em 1em;
         background: #FFF;
       }
-      th {
+      table th {
         background: #DDD;
       }
     </style>
@@ -30,18 +30,32 @@
   
   <table>
     <thead>
-      <tr><th>Name</th><th>RightJS 1.5</th><th>jQuery 1.3.2</th><th>Diff (%)</th></tr>
+      <tr>
+        <th>Name</th>
+        <th>RightJS 1.5</th>
+        <th>jQuery 1.3.2</th>
+        <th>jQuery 1.4a2</th>
+        <th>Diff 1.3.2 (%)</th>
+        <th>Diff 1.4a2 (%)</th>
+      </tr>
     </thead>
     <tbody id="results"></tbody>
   </table>
   
-  <b>AVG Time Diff</b>: <span id="avg-diff">0</span> %
+  <p>
+    <b>AVG Time Diff 1.3.2</b>: <span id="avg-diff-13">0</span> %
+  </p>
+  <p>
+    <b>AVG Time Diff 1.4a2</b>: <span id="avg-diff-14">0</span> %
+  </p>
+  
   
   
   <p>&nbsp;</p>
   
   <iframe name="rightjs_frame" id="rightjs_frame" width="0" height="0" frameborder="0" src="tests/rightjs.html"></iframe>
-  <iframe name="jquery_frame" id="jquery_frame" width="0" height="0" frameborder="0" src="tests/jquery.html"></iframe>
+  <iframe name="jquery_13_frame" id="jquery_frame" width="0" height="0" frameborder="0" src="tests/jquery.html"></iframe>
+  <iframe name="jquery_14_frame" id="jquery_frame" width="0" height="0" frameborder="0" src="tests/jquery-1.4.html"></iframe>
   
   
   <script type="text/javascript" src="lib/driver.js"></script>
