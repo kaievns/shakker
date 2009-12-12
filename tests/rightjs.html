@@ -48,6 +48,18 @@
           $A(list).each('update', 'the text');
         },
         
+        insertBottom: function(list, elements) {
+          $A(list).each(function(item, i) {
+            item.insert(elements[i]);
+          });
+        },
+        
+        insertTop: function(list, elements) {
+          $A(list).each(function(item, i) {
+            item.insert(elements[i]);
+          }, 'top');
+        },
+        
         insertAfter: function(list, elements) {
           $A(list).each(function(item, i) {
             item.insert(elements[i], 'after');

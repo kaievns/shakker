@@ -46,6 +46,18 @@
           $(list).html('the text');
         },
         
+        insertBottom: function(list, elements) {
+          $(list).each(function(i, item) {
+            $(item).append(elements[i]);
+          });
+        },
+        
+        insertTop: function(list, elements) {
+          $(list).each(function(i, item) {
+            $(item).prepend(elements[i]);
+          });
+        },
+        
         insertAfter: function(list, elements) {
           $(list).each(function(i, item) {
             $(item).after(elements[i]);
