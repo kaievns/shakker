@@ -76,7 +76,7 @@ rebuild_tests_table();
 //
 /////////////////////////////////////////////////////////////
 var record_test  = function(framework, test, time) {
-  $(framework+test+'_result').innerHTML = time;
+  $(framework+test+'_result').innerHTML = time || 1; // <- in case it took less than 1ms
 };
 
 var calc_summary = function() {

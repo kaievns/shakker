@@ -18,6 +18,10 @@
 # The frameworks to be tested in order
 frameworks = [
   {
+    :name => "Pure DOM",
+    :file => "dom.js",
+    :test => "dom.js"
+  }, {
     :name => "RightJS 1.5.0",
     :file => "right-150.js",
     :test => "right.js"
@@ -32,7 +36,7 @@ frameworks = [
   }
 ]
 
-base_framework = frameworks[0]
+base_framework = frameworks[1]
 
 ############################################################
 # 

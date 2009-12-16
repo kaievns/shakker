@@ -53,6 +53,7 @@ table th {
   background: #DDD;
   color: #444;
   font-weight: bold;
+  text-align: left;
 }
 table tr:nth-child(2n) td {
   background: #F4F4F4;
