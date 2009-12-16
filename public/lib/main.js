@@ -102,8 +102,8 @@ var calc_the_diffs = function(result) {
       diffs += result[name][test] / result[base_framework][test];
       tests_num ++;
     }
-    $(name + '_avg_diff').innerHTML = Math.round(diffs/tests_num * 1000) / 1000;
-    $(name + '_total_diff').innerHTML = Math.round(result[name].total / result[base_framework].total * 1000) / 1000;
+    $(name + '_avg_diff').innerHTML = Math.round(diffs/tests_num * 100) / 100;
+    $(name + '_total_diff').innerHTML = Math.round(result[name].total / result[base_framework].total * 100) / 100;
   }
 };
 
