@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>Shaken Not Stirred</title>
+    <link rel="stylesheet" type="text/css" href="lib/style.css" />
+  </head>
+  <h1>Shaken Not Stirred <a href="#" id="starter">Shake it baby!</a></h1>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+      <% @frameworks.each do |lib| %>
+        <th><%= lib[:name] %></th>
+      <% end %>
+      </tr>
+    </thead>
+    <tbody id="results"></tbody>
+  </table>
+  
+  <h2>Total Time Based Speed Comparison</h2>
+  <ul id="total">
+  <% @frameworks.each do |lib| %>
+    <li><label><%= lib[:name] %>:</label> &times;<span id="<%= lib[:id] %>_total_diff">0</span></li>  
+  <% end %>
+  </ul>
+  
+  <h2>Average Diffs Based Speed Comparison</h2>
+  <ul id="diffs">
+  <% @frameworks.each do |lib| %>
+    <li><label><%= lib[:name] %>:</label> &times;<span id="<%= lib[:id] %>_avg_diff">0</span></li>  
+  <% end %>
+  </ul>
+  
+  <p>&nbsp;</p>
+  
+  <div id="frames">
+    <% @frameworks.each do |lib| %>
+      <iframe name="<%= lib[:id] %>_frame" id="<%= lib[:id] %>_frame" width="0" height="0" frameborder="0" src="test/<%= lib[:id] %>"></iframe>
+    <% end %>
+  </div>
+  
+  <!-- keep it at the bottom -->
+  <script type="text/javascript">var base_framework = "<%= @base_framework %>";</script>
+  <script type="text/javascript" src="lib/main.js"></script>
+</html>

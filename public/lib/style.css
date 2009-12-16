@@ -1,0 +1,83 @@
+html, body {
+  font-family: Helvetica;
+  font-size: 10pt;
+  background: #EEE;
+  margin: 0;
+  padding: 0 4em;
+}
+
+h1 {
+  position: relative;
+  font-size: 3em;
+  background: #DDD;
+  border-bottom: 4pt solid #DCC;
+  margin: 0;
+  padding: .5em;
+  margin-bottom: .5em;
+}
+
+h1 a {
+  position: absolute;
+  right: 1em;
+  bottom: .5em;
+  font-size: .4em;
+  font-family: Helvetica;
+}
+
+h1, h2, th {
+  font-family: Georgia;
+  font-weight: normal;
+  color: #666;
+}
+
+a {
+  color: brown;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: none;
+  margin: 1em 0;
+}
+table th, table td {
+  border: 1px solid #CCC;
+  padding: .2em 1em;
+  background: #FFF;
+}
+table th {
+  background: #DDD;
+  color: #444;
+  font-weight: bold;
+}
+table tr:nth-child(2n) td {
+  background: #F4F4F4;
+}
+table tbody tr:hover td {
+  background: #FEE;
+}
+table tbody tr:last-child td {
+  background: #DDD;
+}
+table tbody tr:last-child td:first-child {
+  text-align: right;
+}
+
+ul {
+  list-style: none;
+  margin-left: 1em;
+  padding-left: 0;
+}
+ul li label {
+  font-weight: bold;
+  display: inline-block;
+  width: 8em;
+}
+
+#frames {
+  visibility: hidden;
+}

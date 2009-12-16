@@ -1,0 +1,37 @@
+h1.Welcome to Shakker!
+
+Shakker is a mano-a-mano javascript frameworks performance testing suite
+
+The key difference from the TaskSpeed project is that the tests are clean
+and perform a blunt feature-to-feature tests. They are not affected by
+any sort of elements selection/finding and other utility operations.
+
+It also calculates the statistic based on the average time differences
+between test results for different frameworks.
+
+
+h1.Firing Up
+
+This application uses the Sinatra ruby-based framework. So you'll need
+ruby and the @sinatra@ gem installed. After that just say
+
+<pre><code>./index.rb</code></pre>
+
+in the project root directory and open @http://localhost:4567@ in your
+browser.
+
+
+h2.The Elements Building Test
+
+I know most of people would not build complex structures with such stuff,
+but as we test the actual feature, and some people occasionally in small cases
+will still do building this way, we do test the actual elements building
+and appending in the test.
+
+One one hand it might sound unfair towards jQuery, but on the other jQuery
+had the strings with preset id, class and the html content, RightJS on the
+other hand is asked to assign those stuff manually.
+
+
+--
+Copyright (C) 2009 Nikolay V. Nemshilov aka St.
