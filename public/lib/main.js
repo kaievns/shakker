@@ -52,15 +52,17 @@ for (var i=0; i < frames.length; i++) {
 var build_result_row = function(name, key) {
   var tr = $E('tr');
   results.appendChild(tr);
-  tr.innerHTML = '<td>'+name+'</td>';
+  var td = $E('td');
+  td.innerHTML = name;
+  tr.appendChild(td)
   
   for (var i=0; i < frameworks.length; i++) {
-    tr.innerHTML += '<td id="'+frameworks[i]+key+'_result"></td>';
+    var td = $E('td');
+    td.id = frameworks[i]+key+'_result';
+    tr.appendChild(td);
   }
 };
 var rebuild_tests_table = function() {
-  results.innerHTML = '';
-  
   for (var key in test_names) {
     build_result_row(test_names[key], key);
   }
