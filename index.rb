@@ -22,8 +22,8 @@ frameworks = [
     :file => "dom.js",
     :test => "dom.js"
   }, {
-    :name => "RightJS 1.5.0",
-    :file => "right-150.js",
+    :name => "RightJS 1.5.1",
+    :file => "right-151.js",
     :test => "right.js"
   }, {
     :name => "jQuery 1.3.2",
