@@ -33,6 +33,10 @@ frameworks = [
     :name => "jQuery 1.4a2",
     :file => "jq-140.js",
     :test => "jquery.js"
+  }, {
+    :name => "Prototype 1.6.1",
+    :file => "prototype-161.js",
+    :test => "proto.js"
   }
 ]
 

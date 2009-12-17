@@ -1,10 +1,9 @@
 var Test = {
   make: function(id) {
-    new Element('ul', {'class': 'fromcode', id: id})
+    $(document.body).insert(new Element('ul', {'class': 'fromcode', id: id})
       .insert(new Element('li', {html: 'one'}))
       .insert(new Element('li', {html: 'two'}))
-      .insert(new Element('li', {html: 'three'}))
-      .insertTo(document.body);
+      .insert(new Element('li', {html: 'three'})));
   },
 
   find: function(id) {
@@ -12,31 +11,31 @@ var Test = {
   },
 
   bind: function(list) {
-    list.each('on', 'click', function() {});
+    list.invoke('observe', 'click', function() {});
   },
   
   unbind: function(list) {
-    list.each('stopObserving', 'click');
+    list.invoke('stopObserving', 'click', function() {});
   },
   
   attr: function(list) {
-    list.map('id');
+    list.pluck('id');
   },
   
   style: function(list) {
-    list.each('setStyle', { backgroundColor:"#ededed", color:"#fff" });
+    list.invoke('setStyle', { backgroundColor:"#ededed", color:"#fff" });
   },
   
   addClass: function(list) {
-    list.each('addClass', 'test-class');
+    list.invoke('addClassName', 'test-class');
   },
   
   removeClass: function(list) {
-    list.each('removeClass', 'test-class');
+    list.invoke('removeClassName', 'test-class');
   },
   
   update: function(list) {
-    list.each('update', 'the text');
+    list.invoke('update', 'the text');
   },
   
   insertBottom: function(list, elements) {
@@ -47,23 +46,23 @@ var Test = {
   
   insertTop: function(list, elements) {
     list.each(function(item, i) {
-      item.insert(elements[i], 'top');
+      item.insert({top: elements[i]});
     });
   },
   
   insertAfter: function(list, elements) {
     list.each(function(item, i) {
-      item.insert(elements[i], 'after');
+      item.insert({after: elements[i]});
     });
   },
   
   insertBefore: function(list, elements) {
     list.each(function(item, i) {
-      item.insert(elements[i], 'before');
+      item.insert({before: elements[i]});
     });
   },
   
   remove: function(list) {
-    list.each('remove');
+    list.invoke('remove');
   }
 };

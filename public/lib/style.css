@@ -48,8 +48,8 @@ table {
 table th, table td {
   border: 1px solid #CCC;
   padding: .2em 1em;
-  background: #FFF;
-  width: 7em;
+  background: #F4f4f4;
+  width: 8em;
 }
 table th.name-col, table td.name-col {
   width: auto;
