@@ -146,8 +146,7 @@ var test_next_framework = function(test_name) {
     }
     record_test(framework, test_name, new Date() - time);
     
-    
-    window.setTimeout(function() { test_next_framework(test_name); }, 0);
+    test_next_framework(test_name);
   } else {
     window.setTimeout(run_next_test, 0);
   }
