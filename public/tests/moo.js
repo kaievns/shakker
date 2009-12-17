@@ -47,25 +47,25 @@ var Test = {
   
   insertBottom: function(list, elements) {
     list.each(function(item, i) {
-      elements[i].inject(item);
+      $(elements[i]).inject(item);
     });
   },
   
   insertTop: function(list, elements) {
     list.each(function(item, i) {
-      elements[i].inject(item, 'top');
+      $(elements[i]).inject(item, 'top');
     });
   },
   
   insertAfter: function(list, elements) {
     list.each(function(item, i) {
-      elements[i].inject(item, 'after');
+      $(elements[i]).inject(item, 'after');
     });
   },
   
   insertBefore: function(list, elements) {
     list.each(function(item, i) {
-      elements[i].inject(item, 'before');
+      $(elements[i]).inject(item, 'before');
     });
   },
   

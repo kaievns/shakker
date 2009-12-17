@@ -1,6 +1,10 @@
 var Test = {
   _list: function() {
-    return Array.prototype.slice.call(document.getElementsByTagName('ul'));
+    var select = document.getElementsByTagName('ul'), list = [];
+    for (var i=0; i < select.length; i++)
+      list.push(select[i]);
+      
+    return list;
   },
   
   make: function(id) {
