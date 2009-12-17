@@ -52,7 +52,7 @@ var Test = {
   
   attr: function(list) {
     for (var result = [], i=0, l = list.length; i < l; i++) {
-      result.push(list[i].id);
+      result[i] = list[i].id;
     }
   },
   
@@ -69,16 +69,16 @@ var Test = {
     var class_name = 'test-class';
     for (var i=0, l = list.length; i < l; i++) {
       var testee = ' '+list[i].className+' ';
-      if (testee.indexOf(' '+class_name+' ') === -1) {
-        list[i].className += (testee === '  ' ? '' : ' ') + class_name;
+      if (testee.indexOf(' '+class_name+' ') == -1) {
+        list[i].className += ' ' + class_name;
       }
     }
   },
   
   removeClass: function(list) {
-    var class_name = 'test-class';
+    var class_name = 'test-class', re = /(^|\s+)test\-class(\s+|$)/g;
     for (var i=0, l = list.length; i < l; i++) {
-      list[i].className = (' '+list[i].className+' ').replace(' '+class_name+' ', ' ').replace(/^\s+|\s+$/, '');
+      list[i].className = list[i].className.replace(re, ' ');
     }
   },
   
