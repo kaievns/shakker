@@ -74,7 +74,7 @@ table tbody tr:last-child td:first-child {
 }
 
 table td.rock {
-  background: #6E6;
+  background: #7E7;
 }
 table td.okay {
   background: #BFB;
@@ -92,7 +92,7 @@ ul {
 ul li label {
   font-weight: bold;
   display: inline-block;
-  width: 8em;
+  width: 9em;
 }
 
 #frames {
