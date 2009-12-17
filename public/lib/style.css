@@ -16,7 +16,7 @@ h1 {
   margin-bottom: .5em;
 }
 
-h1 a {
+div#buttons {
   position: absolute;
   right: 1em;
   bottom: .5em;
@@ -38,6 +38,7 @@ a:hover {
   text-decoration: underline;
 }
 
+/** the results table styles */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -48,6 +49,10 @@ table th, table td {
   border: 1px solid #CCC;
   padding: .2em 1em;
   background: #FFF;
+  width: 7em;
+}
+table th.name-col, table td.name-col {
+  width: auto;
 }
 table th {
   background: #DDD;
@@ -55,19 +60,27 @@ table th {
   font-weight: bold;
   text-align: left;
 }
-table tr:nth-child(2n) td {
-  background: #F4F4F4;
-}
-table tbody tr:hover td {
-  background: #FEE;
-}
 table tbody tr:last-child td {
   background: #DDD;
 }
 table tbody tr:last-child td:first-child {
   text-align: right;
 }
+table td.name-col {
+  background: #EEF;
+}
 
+table td.rock {
+  background: #6E6;
+}
+table td.okay {
+  background: #BFB;
+}
+table td.suck {
+  background: #FCC;
+}
+
+/* statistics styles */
 ul {
   list-style: none;
   margin-left: 1em;

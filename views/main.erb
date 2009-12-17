@@ -4,12 +4,12 @@
     <title>Shaken Not Stirred</title>
     <link rel="stylesheet" type="text/css" href="lib/style.css" />
   </head>
-  <h1>Shaken Not Stirred <a href="#" id="starter">Shake it baby!</a></h1>
+  <h1>Shaken Not Stirred <div id="buttons"><a href="#" id="starter">Shake it baby!</a></div></h1>
   
   <table>
     <thead>
       <tr>
-        <th>Name</th>
+        <th class="name-col">Name</th>
       <% @frameworks.each do |lib| %>
         <th><%= lib[:name] %></th>
       <% end %>

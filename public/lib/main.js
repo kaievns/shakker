@@ -53,6 +53,7 @@ var build_result_row = function(name, key) {
   var tr = $E('tr');
   results.appendChild(tr);
   var td = $E('td');
+  td.className = 'name-col';
   td.innerHTML = name;
   tr.appendChild(td)
   
@@ -80,6 +81,33 @@ rebuild_tests_table();
 var record_test  = function(framework, test, time) {
   $(framework+test+'_result').innerHTML = time || 1; // <- in case it took less than 1ms
 };
+
+var paint_test_row = function(test_name) {
+  var min = 10000000, max = 0, summ = 0, results = {};
+  
+  for (var i=0; i < frameworks.length; i++) {
+    var key = frameworks[i]+test_name + '_result';
+    var result = parseFloat($(key).innerHTML);
+    
+    results[key] = result;
+    
+    if (result > max) max = result;
+    if (result < min) min = result;
+    
+    summ += result;
+  }
+  
+  var avg = summ / frameworks.length;
+  var rock_level = min + (avg - min) * 0.1;
+  var okay_level = min + (avg - min) * 0.3;
+  var suck_level = avg + (max - avg) * 0.7;
+  
+  for (var id in results) {
+    if (results[id] < rock_level)      $(id).className = 'rock';
+    else if (results[id] < okay_level) $(id).className = 'okay';
+    else if (results[id] > suck_level) $(id).className = 'suck';
+  }
+}
 
 var calc_summary = function() {
   var results = {};
@@ -148,6 +176,7 @@ var test_next_framework = function(test_name) {
     
     test_next_framework(test_name);
   } else {
+    paint_test_row(test_name);
     window.setTimeout(run_next_test, 0);
   }
 }
@@ -161,11 +190,13 @@ var run_next_test = function() {
     test_next_framework(test_name);
   } else {
     calc_summary();
+    $('buttons').innerHTML = 'Here we go!';
   }
 }
 
 
 $('starter').onclick = function() {
-  run_next_test();
+  $('buttons').innerHTML = 'Working...';
+  window.setTimeout(run_next_test, 20);
   return false;
 };
