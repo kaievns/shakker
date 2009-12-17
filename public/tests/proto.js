@@ -1,4 +1,8 @@
 var Test = {
+  _list: function() {
+    return $$('ul');
+  },
+  
   make: function(id) {
     $(document.body).insert(new Element('ul', {'class': 'fromcode', id: id})
       .insert(new Element('li', {html: 'one'}))

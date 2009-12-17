@@ -1,4 +1,8 @@
 var Test = {
+  _list: function() {
+    return $$('ul');
+  },
+  
   make: function(id) {
     new Element('ul', {'class': 'fromcode', id: id})
       .adopt(
@@ -14,43 +18,31 @@ var Test = {
   },
 
   bind: function(list) {
-    list.each(function(item) {
-      item.addEvent('click', $empty)
-    });
+    list.addEvent('click', $empty);
   },
   
   unbind: function(list) {
-    list.each(function(item) {
-      item.removeEvent('click', $empty);
-    });
+    list.removeEvent('click', $empty);
   },
   
   attr: function(list) {
-    list.map(function(item) { return item.id; });
+    list.get('id');
   },
   
   style: function(list) {
-    list.each(function(item) {
-      item.setStyles({ backgroundColor:"#ededed", color:"#fff" });
-    });
+    list.setStyles({ backgroundColor:"#ededed", color:"#fff" });
   },
   
   addClass: function(list) {
-    list.each(function(item) {
-      item.addClass('test-class');
-    });
+    list.addClass('test-class');
   },
   
   removeClass: function(list) {
-    list.each(function(item) {
-      item.removeClass('test-class');
-    });
+    list.removeClass('test-class');
   },
   
   update: function(list) {
-    list.each(function(item) {
-      item.set('html', 'the text');
-    });
+    list.set('html', 'the text');
   },
   
   insertBottom: function(list, elements) {
@@ -78,8 +70,6 @@ var Test = {
   },
   
   remove: function(list) {
-    list.each(function(item) {
-      item.dispose();
-    });
+    list.dispose();
   }
 };

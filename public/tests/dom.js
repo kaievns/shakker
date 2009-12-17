@@ -1,4 +1,8 @@
 var Test = {
+  _list: function() {
+    return Array.prototype.slice.call(document.getElementsByTagName('ul'));
+  },
+  
   make: function(id) {
     var ul = document.createElement('ul');
     ul.id = id;

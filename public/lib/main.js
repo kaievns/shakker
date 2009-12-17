@@ -162,7 +162,7 @@ var test_next_framework = function(test_name) {
       time = new Date();
       driver(test, elements_in_test);
     } else {
-      var list = frame.TestDrive.getElementsForProcessing();
+      var list = frame.Test._list();
       if (tests_with_insert.indexOf(test_name) > -1) {
         var inserts = frame.TestDrive.getElementsToInsert(elements_in_test);
         time = new Date();

@@ -67,10 +67,6 @@ var TestDrive = {
   },
   
 // util methods used in the process
-
-  getElementsForProcessing: function() {
-    return Array.prototype.slice.call(document.getElementsByTagName('ul'));
-  },
   
   getElementsToInsert: function(size) {
     for (var list=[], i=0; i < size; i++)
