@@ -17,33 +17,33 @@ var TestDrive = {
       test('someid'+i);
   },
 
-  bind: function(test, list) {
-    test(list);
+  bind: function(test, list, dummy) {
+    test(list, dummy);
   },
   
-  unbind: function(test, list) {
-    test(list);
+  unbind: function(test, list, dummy) {
+    test(list, dummy);
   },
   
   attr: function(test, list) {
     for (var i=0; i < 10; i++)
-      test(list);
+      test(list, 'id');
   },
   
   style: function(test, list) {
-    test(list);
+    test(list, { backgroundColor:"#ededed", color:"#fff" });
   },
   
   addClass: function(test, list) {
-    test(list);
+    test(list, 'test-class');
   },
   
   removeClass: function(test, list) {
-    test(list);
+    test(list, 'test-class');
   },
   
   update: function(test, list) {
-    test(list);
+    test(list, '<li>some text</li>');
   },
   
   insertTop: function(test, list, elements) {
@@ -67,6 +67,7 @@ var TestDrive = {
   },
   
 // util methods used in the process
+  dummy: function() {},
   
   getElementsToInsert: function(size) {
     for (var list=[], i=0; i < size; i++)

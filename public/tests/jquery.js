@@ -15,32 +15,32 @@ var Test = {
     return $('#'+id);
   },
   
-  bind: function(list) {
-    list.bind('click', function() {});
+  bind: function(list, callback) {
+    list.bind('click', callback);
   },
   
-  unbind: function(list) {
-    list.unbind('click');
+  unbind: function(list, callback) {
+    list.unbind('click', callback);
   },
   
-  attr: function(list) {
-    list.map(function() { return this.id });
+  attr: function(list, attr) {
+    list.map(function() { return this[attr]; });
   },
   
-  style: function(list) {
-    list.css({ backgroundColor:"#ededed", color:"#fff" });
+  style: function(list, style) {
+    list.css(style);
   },
   
-  addClass: function(list) {
-    list.addClass('test-class');
+  addClass: function(list, class_name) {
+    list.addClass(class_name);
   },
   
-  removeClass: function(list) {
-    list.removeClass('test-class');
+  removeClass: function(list, class_name) {
+    list.removeClass(class_name);
   },
   
-  update: function(list) {
-    list.html('the text');
+  update: function(list, content) {
+    list.html(content);
   },
   
   insertBottom: function(list, elements) {

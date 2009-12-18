@@ -14,32 +14,32 @@ var Test = {
     return $(id);
   },
 
-  bind: function(list) {
-    list.invoke('observe', 'click', function() {});
+  bind: function(list, callback) {
+    list.invoke('observe', 'click', callback);
   },
   
-  unbind: function(list) {
-    list.invoke('stopObserving', 'click', function() {});
+  unbind: function(list, callback) {
+    list.invoke('stopObserving', 'click', callback);
   },
   
-  attr: function(list) {
-    list.pluck('id');
+  attr: function(list, attr) {
+    list.pluck(attr);
   },
   
-  style: function(list) {
-    list.invoke('setStyle', { backgroundColor:"#ededed", color:"#fff" });
+  style: function(list, style) {
+    list.invoke('setStyle', style);
   },
   
-  addClass: function(list) {
-    list.invoke('addClassName', 'test-class');
+  addClass: function(list, class_name) {
+    list.invoke('addClassName', class_name);
   },
   
-  removeClass: function(list) {
-    list.invoke('removeClassName', 'test-class');
+  removeClass: function(list, class_name) {
+    list.invoke('removeClassName', class_name);
   },
   
-  update: function(list) {
-    list.invoke('update', 'the text');
+  update: function(list, content) {
+    list.invoke('update', content);
   },
   
   insertBottom: function(list, elements) {

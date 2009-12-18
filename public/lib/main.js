@@ -169,7 +169,7 @@ var test_next_framework = function(test_name) {
         driver(test, list, inserts);
       } else {
         time = new Date();
-        driver(test, list);
+        driver(test, list, frame.TestDrive.dummy);
       }
     }
     record_test(framework, test_name, new Date() - time);

@@ -30,34 +30,33 @@ var Test = {
     return document.getElementById(id);
   },
 
-  bind: self.attachEvent ? function(list) {
+  bind: self.attachEvent ? function(list, callback) {
     for (var i=0, l = list.length; i < l; i++) {
-      list[i].attachEvent('onclick', function() {});
+      list[i].attachEvent('onclick', callback);
     }
-  } : function(list) {
+  } : function(list, callback) {
     for (var i=0, l = list.length; i < l; i++) {
-      list[i].addEventListener('click', function() {}, false);
-    }
-  },
-  
-  unbind: self.attachEvent ? function(list) {
-    for (var i=0, l = list.length; i < l; i++) {
-      list[i].detachEvent('onclick', function() {});
-    }
-  } : function(list) {
-    for (var i=0, l = list.length; i < l; i++) {
-      list[i].removeEventListener('click', function() {}, false);
+      list[i].addEventListener('click', callback, false);
     }
   },
   
-  attr: function(list) {
+  unbind: self.attachEvent ? function(list, callback) {
+    for (var i=0, l = list.length; i < l; i++) {
+      list[i].detachEvent('onclick', callback);
+    }
+  } : function(list, callback) {
+    for (var i=0, l = list.length; i < l; i++) {
+      list[i].removeEventListener('click', callback, false);
+    }
+  },
+  
+  attr: function(list, attr) {
     for (var result = [], i=0, l = list.length; i < l; i++) {
-      result[i] = list[i].id;
+      result[i] = list[i][attr];
     }
   },
   
-  style: function(list) {
-    var style = { backgroundColor:"#ededed", color:"#fff" };
+  style: function(list, style) {
     for (var i=0, l = list.length; i < l; i++) {
       for (var key in style) {
         list[i].style[key] = style[key];
@@ -65,8 +64,7 @@ var Test = {
     }
   },
   
-  addClass: function(list) {
-    var class_name = 'test-class';
+  addClass: function(list, class_name) {
     for (var i=0, l = list.length; i < l; i++) {
       var testee = ' '+list[i].className+' ';
       if (testee.indexOf(' '+class_name+' ') == -1) {
@@ -75,17 +73,17 @@ var Test = {
     }
   },
   
-  removeClass: function(list) {
-    var class_name = 'test-class', re = /(^|\s+)test\-class(\s+|$)/g;
+  removeClass: function(list, class_name) {
+    var re = new RegExp("(^|\\s+)"+class_name.replace('-', '\\-')+"(\\s+|$)", "g");
     for (var i=0, l = list.length; i < l; i++) {
       list[i].className = list[i].className.replace(re, ' ');
     }
   },
   
-  update: function(list) {
+  update: function(list, content) {
     for (var i=0, l = list.length; i < l; i++) {
       // TODO make the scripts extraction in here
-      list[i].innerHTML = 'the text';
+      list[i].innerHTML = content;
     }
   },
   
