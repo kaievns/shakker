@@ -78,18 +78,16 @@ rebuild_tests_table();
 //   Results processing section
 //
 /////////////////////////////////////////////////////////////
+var one_test_results;
 var record_test  = function(framework, test, time) {
-  $(framework+test+'_result').innerHTML = time || 1; // <- in case it took less than 1ms
+  one_test_results[framework+test+'_result'] = time || 1; // <- in case it took less than 1ms
 };
 
 var paint_test_row = function(test_name) {
-  var min = 10000000, max = 0, summ = 0, results = {};
+  var min = 10000000, max = 0, summ = 0, results = one_test_results;
   
-  for (var i=0; i < frameworks.length; i++) {
-    var key = frameworks[i]+test_name + '_result';
-    var result = parseFloat($(key).innerHTML);
-    
-    results[key] = result;
+  for (var key in results) {
+    var result = results[key];
     
     if (result > max) max = result;
     if (result < min) min = result;
@@ -103,9 +101,12 @@ var paint_test_row = function(test_name) {
   var suck_level = avg + (max - avg) * 0.7;
   
   for (var id in results) {
-    if (results[id] < rock_level)      $(id).className = 'rock';
-    else if (results[id] < okay_level) $(id).className = 'okay';
-    else if (results[id] > suck_level) $(id).className = 'suck';
+    var cell = $(id);
+    cell.innerHTML = '' + results[id];
+    
+    if (results[id] < rock_level)      cell.className = 'rock';
+    else if (results[id] < okay_level) cell.className = 'okay';
+    else if (results[id] > suck_level) cell.className = 'suck';
   }
 }
 
@@ -187,6 +188,7 @@ var run_next_test = function() {
   
   if (test_name) {
     testees_list = [].concat(frameworks);
+    one_test_results = {};
     test_next_framework(test_name);
   } else {
     calc_summary();
