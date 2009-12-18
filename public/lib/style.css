@@ -91,8 +91,14 @@ ul {
 }
 ul li label {
   font-weight: bold;
+  color: #333;
   display: inline-block;
   width: 9em;
+}
+
+#by-total-result, #by-diffs-result {
+  float: left;
+  margin-right: 5em;
 }
 
 #frames {

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <title>Shaken Not Stirred</title>
+    <title>The Shakker Performance Test</title>
     <link rel="stylesheet" type="text/css" href="lib/style.css" />
   </head>
   <h1>Shaken Not Stirred <div id="buttons"><a href="#" id="starter">Shake it baby!</a></div></h1>
@@ -18,21 +18,23 @@
     <tbody id="results"></tbody>
   </table>
   
-  <h2>Total Time Based Speed Comparison</h2>
-  <ul id="total">
-  <% @frameworks.each do |lib| %>
-    <li><label><%= lib[:name] %>:</label> &times;<span id="<%= lib[:id] %>_total_diff">0</span></li>  
-  <% end %>
-  </ul>
+  <div id="by-total-result">
+    <h2>Total Time Based Speed Comparison</h2>
+    <ul>
+    <% @frameworks.each do |lib| %>
+      <li><label><%= lib[:name] %>:</label> &times;<span id="<%= lib[:id] %>_total_diff">0</span></li>  
+    <% end %>
+    </ul>
+  </div>
   
-  <h2>Average Diff Based Speed Comparison</h2>
-  <ul id="diffs">
-  <% @frameworks.each do |lib| %>
-    <li><label><%= lib[:name] %>:</label> &times;<span id="<%= lib[:id] %>_avg_diff">0</span></li>  
-  <% end %>
-  </ul>
-  
-  <p>&nbsp;</p>
+  <div id="by-diffs-result">
+    <h2>Average Diff Based Speed Comparison</h2>
+    <ul>
+    <% @frameworks.each do |lib| %>
+      <li><label><%= lib[:name] %>:</label> &times;<span id="<%= lib[:id] %>_avg_diff">0</span></li>  
+    <% end %>
+    </ul>
+  </div>
   
   <div id="frames">
     <% @frameworks.each do |lib| %>
