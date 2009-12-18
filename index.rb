@@ -41,6 +41,10 @@ frameworks = [
     :name => "Mootools 1.2.4",
     :file => "mootools-124.js",
     :test => "moo.js"
+  }, {
+    :name => "Dojo 1.4.0",
+    :file => "dojo-140.js",
+    :test => "dojo.js"
   }
 ]
 

@@ -48,7 +48,7 @@ table th, table td {
   border: 1px solid #CCC;
   padding: .2em 1em;
   background: #F4f4f4;
-  width: 8em;
+  width: 5em;
   text-align: right;
 }
 table th.name-col, table td.name-col {
@@ -97,6 +97,8 @@ ul li label {
 
 #by-total-result, #by-diffs-result {
   float: left;
+}
+#by-total-result {
   margin-right: 5em;
 }
 
