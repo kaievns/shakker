@@ -7,7 +7,6 @@ html, body {
 }
 
 h1 {
-  position: relative;
   font-size: 3em;
   background: #DDD;
   border-bottom: 4pt solid #DCC;
@@ -18,8 +17,8 @@ h1 {
 
 div#buttons {
   position: absolute;
-  right: 1em;
-  bottom: .5em;
+  right: 7.7em;
+  top: 3.8em;
   font-size: .4em;
   font-family: Helvetica;
 }
