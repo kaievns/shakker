@@ -4,13 +4,11 @@ var Test = {
   },
   
   make: function(id) {
-    new Element('ul', {'class': 'fromcode', id: id})
-      .adopt(
-        new Element('li', {html: 'one'}),
-        new Element('li', {html: 'two'}),
-        new Element('li', {html: 'three'})
-      )
-      .inject(document.body);
+    var ul = new Element('ul', {'class': 'fromcode', id: id})
+      new Element('li', {html: 'one'}).inject(ul);
+      new Element('li', {html: 'two'}).inject(ul);
+      new Element('li', {html: 'three'}).inject(ul)  
+    ul.inject(document.body);
   },
 
   find: function(id) {
