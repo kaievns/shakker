@@ -160,16 +160,16 @@ var test_next_framework = function(test_name) {
     var driver = frame.TestDrive[test_name];
     
     if (tests_without_list.indexOf(test_name) > -1) {
-      time = new Date();
+      var time = new Date();
       driver(test, elements_in_test);
     } else {
       var list = frame.Test._list();
       if (tests_with_insert.indexOf(test_name) > -1) {
         var inserts = frame.TestDrive.getElementsToInsert(elements_in_test);
-        time = new Date();
+        var time = new Date();
         driver(test, list, inserts);
       } else {
-        time = new Date();
+        var time = new Date();
         driver(test, list, frame.TestDrive.dummy);
       }
     }

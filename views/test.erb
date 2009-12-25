@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=8">
-    <script type="text/javascript" src="../frameworks/<%= @framework[:file] %>"></script>
-    <script type="text/javascript" src="../tests/<%= @framework[:test] %>"></script>
-    <script type="text/javascript" src="../lib/test.js"></script>
+    <script type="text/javascript" src="../frameworks/<%= @framework[:file] %>?<%= Time.now.to_i %>"></script>
+    <script type="text/javascript" src="../tests/<%= @framework[:test] %>?<%= Time.now.to_i %>"></script>
+    <script type="text/javascript" src="../lib/test.js?<%= Time.now.to_i %>"></script>
   </head>
   <body></body>
 </html>
