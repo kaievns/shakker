@@ -30,7 +30,7 @@ frameworks = [
     :file => "jq-132.js",
     :test => "jquery.js"
   }, {
-    :name => "jQuery 1.4a2",
+    :name => "jQuery 1.4.0",
     :file => "jq-140.js",
     :test => "jquery.js"
   }, {
