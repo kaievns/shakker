@@ -50,7 +50,15 @@ var Test = {
     }
   },
   
-  attr: function(list, attr) {
+  set: function(list, attrs) {
+    for (var i=0, l = list.length; i < l; i++) {
+      for (var key in attrs) {
+        list[i][key] = attrs[key];
+      }
+    }
+  },
+  
+  get: function(list, attr) {
     for (var result = [], i=0, l = list.length; i < l; i++) {
       result[i] = list[i][attr];
     }

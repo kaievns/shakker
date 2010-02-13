@@ -25,7 +25,11 @@ var TestDrive = {
     test(list, dummy);
   },
   
-  attr: function(test, list) {
+  set: function(test, list) {
+    test(list, {title: 'title'});
+  },
+  
+  get: function(test, list) {
     for (var i=0; i < 10; i++)
       test(list, 'id');
   },

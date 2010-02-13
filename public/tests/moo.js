@@ -23,7 +23,11 @@ var Test = {
     list.removeEvent('click', callback);
   },
   
-  attr: function(list, attr) {
+  set: function(list, attrs) {
+    list.set(attrs);
+  },
+  
+  get: function(list, attr) {
     list.get(attr);
   },
   

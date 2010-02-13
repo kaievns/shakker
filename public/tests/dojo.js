@@ -28,7 +28,13 @@ var Test = {
     });
   },
   
-  attr: function(list, attr) {
+  set: function(list, attrs) {
+    for (var key in attrs) {
+      list.attr(key, attrs[key]);
+    }
+  },
+  
+  get: function(list, attr) {
     list.attr(attr);
   },
   
@@ -45,7 +51,7 @@ var Test = {
   },
   
   update: function(list, content) {
-    list.addContent(content, "only");
+    list.addContent(content, content);
   },
   
   insertBottom: function(list, elements) {

@@ -22,7 +22,15 @@ var Test = {
     list.invoke('stopObserving', 'click', callback);
   },
   
-  attr: function(list, attr) {
+  set: function(list, attrs) {
+    list.each(function(item) {
+      for (var key in attrs) {
+        item[key] = attrs[key];
+      }
+    });
+  },
+  
+  get: function(list, attr) {
     list.pluck(attr);
   },
   

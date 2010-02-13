@@ -23,7 +23,13 @@ var Test = {
     list.unbind('click', callback);
   },
   
-  attr: function(list, attr) {
+  set: function(list, attrs) {
+    for (var key in attrs) {
+      list.attr(key, attrs[key]);
+    }
+  },
+  
+  get: function(list, attr) {
     list.map(function() { return this[attr]; });
   },
   

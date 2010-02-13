@@ -23,7 +23,11 @@ var Test = {
     list.each('stopObserving', 'click', callback);
   },
   
-  attr: function(list, attr) {
+  set: function(list, attrs) {
+    list.each('set', attrs);
+  },
+  
+  get: function(list, attr) {
     list.map(attr);
   },
   
