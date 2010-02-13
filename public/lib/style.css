@@ -1,32 +1,15 @@
 html, body {
   font-family: Helvetica;
   font-size: 10pt;
-  background: #EEE;
   margin: 0;
-  padding: 0 4em;
+  height: 100%;
 }
 
-h1 {
-  font-size: 3em;
-  background: #DDD;
-  border-bottom: 4pt solid #DCC;
-  margin: 0;
-  padding: .5em;
-  margin-bottom: .5em;
-}
-
-div#buttons {
-  position: absolute;
-  right: 7.7em;
-  top: 3.8em;
-  font-size: .4em;
-  font-family: Helvetica;
-}
 
 h1, h2, th {
-  font-family: Georgia;
+  font-family: "Trebuchet MS", Garuda, sans-serif;
   font-weight: normal;
-  color: #666;
+  color: #444;
 }
 
 a {
@@ -35,6 +18,48 @@ a {
 }
 a:hover {
   text-decoration: underline;
+}
+
+div#body {
+  background: #DDD;
+  height: 100%;
+}
+
+div#head {
+  border-bottom: 4pt solid #DCC;
+  padding: 2em 8em;
+}
+
+div#head h1 {
+  font-size: 3em;
+  margin: 0;
+  padding: 0;
+}
+
+div#head div#options {
+  position: absolute;
+  right: 8em;
+  top: 2em;
+}
+
+div#head div#buttons {
+  position: absolute;
+  right: 8em;
+  top: 4.8em;
+}
+
+div#main {
+  background: #F8F8F8;
+  padding-top: 1em;
+  padding-bottom: 2em;
+  padding-left: 8em;
+  padding-right: 8em;
+}
+
+div#foot {
+  color: #666;
+  border-top: 1px solid #ECC;
+  padding: 1em 8em;
 }
 
 /** the results table styles */
@@ -47,16 +72,15 @@ table {
 table th, table td {
   border: 1px solid #CCC;
   padding: .2em 1em;
-  background: #F4f4f4;
-  width: 6em;
-* width: 7em;
+  background: #F8f8f8;
+  width: 8em;
   text-align: right;
 }
 table th.name-col, table td.name-col {
   width: auto;
 }
 table td.name-col {
-  background: #EEF;
+  background: #F4F4FF;
   text-align: left;
 }
 

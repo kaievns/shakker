@@ -4,45 +4,76 @@
     <title>The Shakker Performance Test</title>
     <link rel="stylesheet" type="text/css" href="lib/style.css" />
   </head>
-  <h1>Shaken Not Stirred <div id="buttons"><a href="#" id="starter">Shake it baby!</a></div></h1>
   
-  <table>
-    <thead>
-      <tr>
-        <th class="name-col">Test Name</th>
-      <% @frameworks.each do |lib| %>
-        <th><%= lib[:name] %></th>
-      <% end %>
-      </tr>
-    </thead>
-    <tbody id="results"></tbody>
-  </table>
-  
-  <div id="by-total-result">
-    <h2>Total Time Based Speed Comparison</h2>
-    <ul>
-    <% @frameworks.each do |lib| %>
-      <li><label><%= lib[:name] %>:</label> &times;<span id="<%= lib[:id] %>_total_diff">0</span></li>  
-    <% end %>
-    </ul>
-  </div>
-  
-  <div id="by-diffs-result">
-    <h2>Average Diff Based Speed Comparison</h2>
-    <ul>
-    <% @frameworks.each do |lib| %>
-      <li><label><%= lib[:name] %>:</label> &times;<span id="<%= lib[:id] %>_avg_diff">0</span></li>  
-    <% end %>
-    </ul>
-  </div>
-  
-  <div id="frames">
-    <% @frameworks.each do |lib| %>
-      <iframe name="<%= lib[:id] %>_frame" id="<%= lib[:id] %>_frame" width="0" height="0" frameborder="0" src="test/<%= lib[:id] %>"></iframe>
-    <% end %>
-  </div>
-  
-  <!-- keep it at the bottom -->
-  <script type="text/javascript">var base_framework = "<%= @base_framework %>";</script>
-  <script type="text/javascript" src="lib/main.js?<%= Time.now.to_i %>"></script>
+  <body>
+    <div id="body">
+      <div id="head">
+        <h1>Shaken Not Stirred</h1>
+        
+        <div id="options">
+          <select id="nodes-num">
+            <option value="800">800 Nodes</option>
+            <option value="400">400 Nodes</option>
+            <option value="200">200 Nodes</option>
+            <option value="100">100 Nodes</option>
+          </select>
+        </div>
+        
+        <div id="buttons">
+          <a href="#" id="starter">Shake it baby!</a>
+        </div>
+      </div>
+
+      <div id="main">
+        
+        <table>
+          <thead>
+            <tr>
+              <th class="name-col">Test Name</th>
+            <% @frameworks.each do |lib| %>
+              <th><%= lib[:name] %></th>
+            <% end %>
+            </tr>
+          </thead>
+          <tbody id="results"></tbody>
+        </table>
+
+        <div id="by-total-result">
+          <h2>Total Time Based Speed Comparison</h2>
+          <ul>
+          <% @frameworks.each do |lib| %>
+            <li><label><%= lib[:name] %>:</label> &times;<span id="<%= lib[:id] %>_total_diff">0</span></li>  
+          <% end %>
+          </ul>
+        </div>
+
+        <div id="by-diffs-result">
+          <h2>Average Diff Based Speed Comparison</h2>
+          <ul>
+          <% @frameworks.each do |lib| %>
+            <li><label><%= lib[:name] %>:</label> &times;<span id="<%= lib[:id] %>_avg_diff">0</span></li>  
+          <% end %>
+          </ul>
+        </div>
+        
+        <div style="clear: both"></div>
+        
+        <div id="frames">
+          <% @frameworks.each do |lib| %>
+            <iframe name="<%= lib[:id] %>_frame" id="<%= lib[:id] %>_frame" width="0" height="0" frameborder="0" src="test/<%= lib[:id] %>"></iframe>
+          <% end %>
+        </div>
+
+        <!-- keep it at the bottom -->
+        <script type="text/javascript">var base_framework = "<%= @base_framework %>";</script>
+        <script type="text/javascript" src="lib/main.js?<%= Time.now.to_i %>"></script>
+
+      </div>
+
+
+      <div id="foot">
+        Copyright &copy; 2009-2010 Nikolay V. Nemshilov
+      </div>
+    </div>
+  </body>
 </html>

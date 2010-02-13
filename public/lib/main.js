@@ -31,7 +31,10 @@ var test_names = {
 var tests_without_list = 'make find';
 var tests_with_insert  = 'insertBottom insertTop insertAfter insertBefore';
 
-var elements_in_test   = 1000;
+var elements_in_test   = 800;
+
+
+
 
 
 /////////////////////////////////////////////////////////////
@@ -42,6 +45,21 @@ var elements_in_test   = 1000;
 var $ = function(id) { return document.getElementById(id); };
 var $E = function(tag) { return document.createElement(tag); };
 
+
+// getting the number of elements to run
+var elements_num_option = $('nodes-num');
+elements_num_option.onchange = function() {
+  elements_in_test = parseInt(this.value);
+  document.cookie = 'shakker_num='+this.value;
+};
+
+var match = document.cookie.match(/shakker_num=(\d+)/);
+if (match) {
+  elements_num_option.value = match[1];
+  elements_num_option.onchange();
+}
+
+// building the results table
 var results = $('results');
 var frameworks = [];
 var frames = $('frames').getElementsByTagName('iframe');

@@ -34,7 +34,7 @@ frameworks = [
     :file => "prototype-161.js",
     :test => "proto.js"
   }, {
-    :name => "Mootools 1.2.4",
+    :name => "MooTools 1.2.4",
     :file => "mootools-124.js",
     :test => "moo.js"
   }, {
