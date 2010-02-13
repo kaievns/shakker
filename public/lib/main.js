@@ -2,7 +2,7 @@
  * This is a small util library that handles the acutal tests
  * running, the data collecting, results building and stuff
  *
- * Copyright (C) 2009 Nikolay V. Nemshilov aka St.
+ * Copyright (C) 2009-2010 Nikolay V. Nemshilov aka St.
  */
 
 ////////////////////////////////////////////////////////////
@@ -14,7 +14,7 @@
 var test_names = {
   make:          "Elements building",
   find:          "Access an element by ID",
-  bind:          "Bind an event listener",
+  bind:          "Add an event listener",
   unbind:        "Remove an event listener",
   attr:          "Grab an element attribute",
   style:         "Assign an element style",

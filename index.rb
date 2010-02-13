@@ -12,7 +12,7 @@
 # Browse:
 #   http://localhost:4567
 # 
-# Copyright (C) 2009 Nikolay V. Nemshilov aka St.
+# Copyright (C) 2009-2010 Nikolay V. Nemshilov aka St.
 #
 
 # The frameworks to be tested in order
@@ -22,16 +22,12 @@ frameworks = [
     :file => "dom.js",
     :test => "dom.js"
   }, {
-    :name => "RightJS 1.5.1",
-    :file => "right-151.js",
+    :name => "RightJS 1.5.4",
+    :file => "right-154.js",
     :test => "right.js"
   }, {
-    :name => "jQuery 1.3.2",
-    :file => "jq-132.js",
-    :test => "jquery.js"
-  }, {
-    :name => "jQuery 1.4.0",
-    :file => "jq-140.js",
+    :name => "jQuery 1.4.1",
+    :file => "jq-141.js",
     :test => "jquery.js"
   }, {
     :name => "Prototype 1.6.1",
@@ -42,8 +38,8 @@ frameworks = [
     :file => "mootools-124.js",
     :test => "moo.js"
   }, {
-    :name => "Dojo 1.4.0",
-    :file => "dojo-140.js",
+    :name => "Dojo 1.4.1",
+    :file => "dojo-141.js",
     :test => "dojo.js"
   }
 ]
