@@ -174,24 +174,24 @@ var test_next_framework = function(test_name) {
 
   if (framework) {
     
-    var frame = self[framework+'_frame'];
+    var frame  = self[framework+'_frame'];
     var test   = frame.Test[test_name];
     var driver = frame.TestDrive[test_name];
+    var time   = new Date();
     
     if (tests_without_list.indexOf(test_name) > -1) {
-      var time = new Date();
       driver(test, elements_in_test);
     } else {
       var list = frame.Test._list();
       if (tests_with_insert.indexOf(test_name) > -1) {
         var inserts = frame.TestDrive.getElementsToInsert(elements_in_test);
-        var time = new Date();
+        time = new Date();
         driver(test, list, inserts);
       } else {
-        var time = new Date();
         driver(test, list, frame.TestDrive.dummy);
       }
     }
+    
     record_test(framework, test_name, new Date() - time);
     
     test_next_framework(test_name);
