@@ -26,21 +26,33 @@ frameworks = [
     :file => "right-154.js",
     :test => "right.js"
   }, {
+    :name => "jQuery 1.3.2",
+    :file => "jq-132.js",
+    :test => "jquery.js"
+  }, {
+    :name => "jQuery 1.4.0",
+    :file => "jq-140.js",
+    :test => "jquery.js"
+  }, {
     :name => "jQuery 1.4.1",
     :file => "jq-141.js",
     :test => "jquery.js"
   }, {
-    :name => "Prototype 1.6.1",
-    :file => "prototype-161.js",
-    :test => "proto.js"
-  }, {
-    :name => "MooTools 1.2.4",
-    :file => "mootools-124.js",
-    :test => "moo.js"
-  }, {
-    :name => "Dojo 1.4.1",
-    :file => "dojo-141.js",
-    :test => "dojo.js"
+    :name => "jQuery 1.4.2",
+    :file => "jq-142.js",
+    :test => "jquery.js"
+#  }, {
+#    :name => "Prototype 1.6.1",
+#    :file => "prototype-161.js",
+#    :test => "proto.js"
+#  }, {
+#    :name => "MooTools 1.2.4",
+#    :file => "mootools-124.js",
+#    :test => "moo.js"
+#  }, {
+#    :name => "Dojo 1.4.1",
+#    :file => "dojo-141.js",
+#    :test => "dojo.js"
   }
 ]
 
