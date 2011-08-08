@@ -1,6 +1,9 @@
+var $ = Lovely.module('dom');
+var Element = $.Element;
+
 var Test = {
   _list: function() {
-    return $$('ul');
+    return $('ul');
   },
 
   make: function(id) {
@@ -12,68 +15,68 @@ var Test = {
   },
 
   find: function(id) {
-    return $(id);
+    return $('#'+ id);
   },
 
   bind: function(list, callback) {
-    list.each('on', 'click', callback);
+    list.on('click', callback);
   },
 
   unbind: function(list, callback) {
-    list.each('stopObserving', 'click', callback);
+    list.no('click', callback);
   },
 
   set: function(list, attrs) {
     for (var key in attrs) {
-      list.each('set', key, attrs[key]);
+      list.attr(key, attrs[key]);
     }
   },
 
   get: function(list, attr) {
-    list.map(attr);
+    list.map(function(i) { return i._[attr]});
   },
 
   style: function(list, style) {
-    list.each('setStyle', style);
+    list.style(style);
   },
 
   addClass: function(list, class_name) {
-    list.each('addClass', class_name);
+    list.addClass(class_name);
   },
 
   removeClass: function(list, class_name) {
-    list.each('removeClass', class_name);
+    list.removeClass(class_name);
   },
 
   update: function(list, content) {
-    list.each('update', content);
+    list.update(content);
   },
 
   insertBottom: function(list, elements) {
-    list.each(function(item, i) {
+    list.forEach(function(item, i) {
       item.insert(elements[i]);
     });
   },
 
   insertTop: function(list, elements) {
-    list.each(function(item, i) {
+    list.forEach(function(item, i) {
       item.insert(elements[i], 'top');
     });
   },
 
   insertAfter: function(list, elements) {
-    list.each(function(item, i) {
+    list.forEach(function(item, i) {
       item.insert(elements[i], 'after');
     });
   },
 
   insertBefore: function(list, elements) {
-    list.each(function(item, i) {
+    list.forEach(function(item, i) {
       item.insert(elements[i], 'before');
     });
   },
 
   remove: function(list) {
-    list.each('remove');
+    list.forEach('remove');
   }
 };
